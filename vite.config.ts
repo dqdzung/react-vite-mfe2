@@ -15,7 +15,8 @@ export default defineConfig(({ mode }) => {
 				name: "mfe2",
 				filename: "remoteEntry.js",
 				remotes: {
-					host: env.VITE_HOST_URL,
+					host:
+						env.VITE_HOST_URL || "http://localhost:3000/assets/remoteEntry.js",
 				},
 				exposes: {
 					"./App": "./src/App.tsx",

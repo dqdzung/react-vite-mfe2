@@ -1,5 +1,6 @@
 import useStore from "host/store";
 import { useState } from "react";
+import { Button } from "host/ui";
 
 function App() {
 	const { increment, decrement } = useStore();
@@ -7,33 +8,32 @@ function App() {
 
 	return (
 		<div className="border-2 border-dashed border-amber-400 p-2">
-			<h1 className="text-xl font-bold">MFE2 Count: {count}</h1>
-
+			<h1 className="text-xl font-bold text-background">MFE2 Count: {count}</h1>
 			<section className="grid grid-cols-1 m-5 gap-5">
 				<div className="grid grid-cols-2 gap-4">
-					<button onClick={increment} className="button">
+					<Button onClick={increment} variant="secondary">
 						Host +1
-					</button>
-					<button onClick={decrement} className="button">
+					</Button>
+					<Button onClick={decrement} variant="secondary">
 						Host -1
-					</button>
+					</Button>
 				</div>
 			</section>
 
 			<section className="grid grid-cols-1 m-5 gap-5">
 				<div className="grid grid-cols-2 gap-4">
-					<button
+					<Button
 						onClick={() => setCount((prev) => prev + 1)}
-						className="button"
+						variant="secondary"
 					>
 						+1
-					</button>
-					<button
+					</Button>
+					<Button
 						onClick={() => setCount((prev) => prev - 1)}
-						className="button"
+						variant="secondary"
 					>
 						-1
-					</button>
+					</Button>
 				</div>
 			</section>
 		</div>
